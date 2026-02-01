@@ -1,0 +1,144 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.main_box {
+  background: url("photo.jpg");
+  height: 100vh;
+  background-size: cover;
+}
+
+/* Menu button */
+.btn_one {
+  color: white;
+  font-size: 30px;
+  font-weight: 700;
+  position: absolute;
+  left: 16px;
+  line-height: 60px;
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+
+.btn_one i:hover {
+  font-size: 40px;
+}
+
+/* Sidebar */
+.sidebar_menu {
+  position: fixed;
+  left: -300px;
+  height: 100vh;
+  width: 300px;
+  background-color: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s linear;
+}
+
+.sidebar_menu .logo {
+  height: 60px;
+  width: 100%;
+  line-height: 60px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar_menu .logo a {
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+  text-decoration: none;
+  padding-left: 50px;
+}
+
+/* Close button */
+.btn_two i {
+  color: gray;
+  font-size: 25px;
+  position: absolute;
+  top: 18px;        /* 👈 moves X upward */
+  right: 20px;      /* 👈 keeps it at right side */
+  cursor: pointer;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.btn_two i:hover {
+  font-size: 30px;
+}
+
+/* Menu items */
+.menu {
+  position: absolute;
+  top: 80px;
+  width: 100%;
+}
+
+.menu ul {
+  list-style: none;
+}
+
+.menu li {
+  padding: 14px 20px;
+  transition: 0.3s;
+}
+
+.menu li:hover {
+  box-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
+}
+
+.menu i {
+  color: white;
+  padding-right: 10px;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+/* Social media */
+.social_media {
+  position: absolute;
+  bottom: 50px;
+  width: 100%;
+}
+
+.social_media ul {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  list-style: none;
+}
+
+.social_media i {
+  color: white;
+  font-size: 20px;
+  opacity: 0.5;
+  transition: 0.3s;
+}
+
+.social_media i:hover {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+/* Checkbox logic */
+#check {
+  display: none;
+}
+
+#check:checked ~ .sidebar_menu {
+  left: 0;
+}
+
+#check:checked ~ .btn_one i {
+  opacity: 0;
+}
+
+#check:checked ~ .sidebar_menu .btn_two i {
+  opacity: 1;
+}
